@@ -9,6 +9,8 @@ public class Livre {
     private final String isbn;
     private int nbExemplaires;
     private int nbDisponibles;
+    private static int nbLivresCrees = 0;
+    private final String code;
 
     public Livre(Auteur auteur, String titre, String isbn, int nbExemplaires) {
         if (auteur == null) {
@@ -20,14 +22,20 @@ public class Livre {
         if (nbExemplaires < 1) {
             throw new IllegalArgumentException("Le nombre d'exemplaires doit être positif");
         }
-        if (nbDisponibles < 0 || nbDisponibles > nbExemplaires) {
-            throw new IllegalArgumentException("Le nombre de livres disponibles est invalide");
+        if (!Isbn.estValide(isbn)) {
+            throw new IllegalArgumentException("L'ISBN est invalide");
         }
         this.auteur = auteur;
         this.titre = titre;
         this.isbn = isbn;
         this.nbExemplaires = nbExemplaires;
         this.nbDisponibles = nbExemplaires;
+        this.code = String.format("LIV-%04d", nbLivresCrees + 1);
+        nbLivresCrees++;
+    }
+
+    public static int getNbLivresCrees() {
+        return nbLivresCrees;
     }
 
     public void setTitre(String titre) {
@@ -66,7 +74,7 @@ public class Livre {
     }
 
     public String toString() {
-        return "[" + isbn + "] " + titre + " - " + auteur
+        return code + " [" + isbn + "] " + titre + " - " + auteur
                 + " - " + nbDisponibles + "/" + nbExemplaires + " disponible(s)";
     }
 }

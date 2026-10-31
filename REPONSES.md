@@ -41,13 +41,13 @@ biblio.getLivres()[0] = null;
 
 **5.1** : Static car la variable n'appartient qu'a la classe, final car la variable ne sera pas modifier, car c'est une constante
 
-**5.2** :
+**5.2** : Sans static le compteur recommencerait à 0 pour chaques livres
 
-**5.3** :
+**5.3** : Le compilateur signale qu'on ne peut pas appeler une methode d'instance depuis une methode static sans objet.
 
-**5.4** :
+**5.4** : static est une bonne idée quand c'est une données pour tous les objets
 
-**5.5** :
+**5.5** : Isbn est static car elle n'a pas besoin d'un objet alors que getAge en a besoin
 
 ## Partie 6
 
