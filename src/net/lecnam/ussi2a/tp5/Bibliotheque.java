@@ -49,6 +49,14 @@ public class Bibliotheque {
         return false;
     }
 
+    public boolean rendre(String isbn) {
+        Livre livre = rechercherLivre(isbn);
+        if (livre != null) {
+            return livre.rendre();
+        }
+        return false;
+    }
+
     public String toString() {
         return "Bibliothèque avec " + nbLivres + " livre(s)";
     }
