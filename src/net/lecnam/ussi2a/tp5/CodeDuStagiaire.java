@@ -28,9 +28,9 @@ public class CodeDuStagiaire {
         bib.afficherLivres();
 
         System.out.println("\n=== Étape 2 : trois lecteurs empruntent Germinal");
-        germinal.nbDisponibles--;
-        germinal.nbDisponibles--;
-        germinal.nbDisponibles--;
+        //germinal.nbDisponibles--;
+        //germinal.nbDisponibles--;
+        //germinal.nbDisponibles--;
         System.out.println(germinal);
 
         System.out.println("\n=== Étape 3 : un auteur contemporain");
@@ -38,8 +38,8 @@ public class CodeDuStagiaire {
         //System.out.println(inconnu);
 
         System.out.println("\n=== Étape 4 : \"correction\" d'une faute de frappe");
-        tourDuMonde.isbn = "123";
-        tourDuMonde.titre = null;
+        //tourDuMonde.isbn = "123";
+        //tourDuMonde.titre = null;
         System.out.println(tourDuMonde);
 
         System.out.println("\n=== Étape 5 : \"petit ménage\" dans la bibliothèque");

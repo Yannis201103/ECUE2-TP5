@@ -31,4 +31,9 @@ public class Auteur {
     public String toString() {
         return prenom + " " + nom + " (" + getAge() + " ans)";
     }
+
+    public Object getNom() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNom'");
+    }
 }
