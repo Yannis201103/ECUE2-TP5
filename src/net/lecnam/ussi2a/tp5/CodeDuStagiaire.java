@@ -31,25 +31,42 @@ public class CodeDuStagiaire {
         //germinal.nbDisponibles--;
         //germinal.nbDisponibles--;
         //germinal.nbDisponibles--;
+        germinal.emprunter();
+        germinal.emprunter();
         System.out.println(germinal);
 
         System.out.println("\n=== Étape 3 : un auteur contemporain");
-        //Auteur inconnu = new Auteur("Dupont", "Jean", LocalDate.of(2090, 1, 1));
-        //System.out.println(inconnu);
+        try {
+            new Auteur("Dupont", "Jean", LocalDate.of(2090, 1, 1));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Refusé : " + e.getMessage());
+        }
+        Auteur inconnu = new Auteur("Dupont", "Antoine", LocalDate.of(2003, 1, 1));
+        System.out.println(inconnu);
 
         System.out.println("\n=== Étape 4 : \"correction\" d'une faute de frappe");
         //tourDuMonde.isbn = "123";
         //tourDuMonde.titre = null;
+        try {
+            tourDuMonde.setTitre(null);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Refusé : " + e.getMessage());
+        }
         System.out.println(tourDuMonde);
 
         System.out.println("\n=== Étape 5 : \"petit ménage\" dans la bibliothèque");
-        bib.nbLivres = 1;
+        //bib.nbLivres = 1;
         bib.afficherLivres();
-        bib.ajouterLivre(new Livre(hugo, "Notre-Dame de Paris", "9782253096337", 1));
+        try {
+            bib.ajouterLivre(new Livre(null, "Le Petit Prince", "9782253004226", 1));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Refusé : " + e.getMessage());
+        }
+        //bib.ajouterLivre(new Livre(hugo, "Notre-Dame de Paris", "9782253096337", 1));
         bib.afficherLivres();
 
         System.out.println("\n=== Étape 6 : on remplit tout");
-        bib.nbLivres = 100;
+        //bib.nbLivres = 100;
         bib.ajouterLivre(new Livre(zola, "L'Assommoir", "9782070360024", 1));
         bib.afficherLivres();
 

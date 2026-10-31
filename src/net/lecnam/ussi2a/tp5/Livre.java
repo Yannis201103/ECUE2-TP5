@@ -38,7 +38,7 @@ public class Livre {
     }
 
     public boolean estDisponible() {
-        return nbDisponibles > 0;
+        return nbDisponibles > 0 && nbDisponibles <= nbExemplaires;
     }
 
     public boolean emprunter() {
@@ -59,6 +59,10 @@ public class Livre {
 
     public boolean aLeMemeIsbnQue(Livre autre) {
         return this.isbn.equals(autre.isbn);
+    }
+
+    public String getIsbn() {
+        return isbn;
     }
 
     public String toString() {
